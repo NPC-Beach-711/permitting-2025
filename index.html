@@ -13,7 +13,7 @@
   <meta property="og:title" content="Gas–Electric Coordination Study – National Petroleum Council" />
   <meta property="og:description" content="NPC study on the reliability impacts of growing interdependence between U.S. natural gas and electric power systems, with key findings, recommendations, and report downloads." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://example.com/NPC_Logo.png" />
+  <meta property="og:image" content="https://example.com/permitting_cover.jpg" />
   <meta property="og:url" content="https://example.com/" />
 
   <link rel="stylesheet" href="style.css" />
@@ -83,19 +83,26 @@
     <!-- MAIN CONTENT -->
     <main>
       <div class="container content-grid">
-        <!-- LEFT 2/3 -->
+        <!-- LEFT 2/3: cover + text + about + participants -->
         <div class="main-column">
-          <!-- HERO -->
+          <!-- HERO BAND (shaped like NAP example) -->
           <section class="hero">
-            <div class="hero-inner">
-              <div class="hero-text">
-                <p class="hero-label">Consensus Study Report</p>
+            <p class="hero-label">Consensus Study Report</p>
 
+            <div class="hero-inner">
+              <!-- Cover on the left -->
+              <div class="hero-cover">
+                <img src="permitting_cover.jpg" alt="Gas–Electric Coordination study cover" />
+                <a href="permitting_cover.jpg" target="_blank" class="view-cover-link">
+                  View larger cover
+                </a>
+              </div>
+
+              <!-- Title, subtitle, buttons in the middle -->
+              <div class="hero-text">
                 <h1>Reliable Energy</h1>
                 <h2>Delivering on the Promise of Gas–Electric Coordination</h2>
-                <p class="hero-subtitle">
-                  A report of the National Petroleum Council Committee on Gas–Electric Coordination.
-                </p>
+                <p class="hero-year">(2025)</p>
 
                 <div class="hero-actions">
                   <a
@@ -103,24 +110,49 @@
                     target="_blank"
                     rel="noopener"
                     class="btn btn-primary"
-                    onclick="trackEvent('download_pdf', 'Hero', 'Full Report (PDF)')"
+                    onclick="trackEvent('download_pdf', 'Hero', 'Download Free PDF')"
                   >
-                    Download Full Report (PDF)
+                    Download Free PDF
+                  </a>
+
+                  <a
+                    href="NPC_Gas-Electric_Coordination_Draft_Report.pdf#page=1"
+                    target="_blank"
+                    rel="noopener"
+                    class="btn btn-secondary"
+                    onclick="trackEvent('view_pdf', 'Hero', 'Read Online')"
+                  >
+                    Read Online
                   </a>
 
                   <a
                     href="#"
-                    class="btn btn-secondary"
-                    onclick="trackEvent('click_link', 'Hero', 'Buy Print Copy')"
+                    class="btn btn-outline"
+                    onclick="trackEvent('click_link', 'Hero', 'Buy Paperback')"
                   >
-                    Buy Print Copy
+                    Buy Paperback
+                  </a>
+
+                  <a
+                    href="#"
+                    class="btn btn-outline"
+                    onclick="trackEvent('click_link', 'Hero', 'Buy Ebook')"
+                  >
+                    Buy Ebook
                   </a>
                 </div>
-              </div>
 
-              <div class="hero-image">
-                <!-- Swap to actual cover when you have it -->
-                <img src="NPC_Logo.png" alt="Gas–Electric Coordination study cover" />
+                <p class="hero-ebook-note">
+                  Epub, Kindle, PDF
+                </p>
+
+                <p class="hero-summary">
+                  Around 10–20% of people who rely on gas-fired power or are affected by gas–electric
+                  interdependence face reliability risks when systems are not aligned. This study
+                  examines how structural differences between gas and power markets, operational
+                  constraints, and regulatory frameworks affect reliability and resilience across
+                  U.S. regions.
+                </p>
               </div>
             </div>
           </section>
@@ -161,7 +193,7 @@
           </article>
         </div>
 
-        <!-- RIGHT 1/3 -->
+        <!-- RIGHT 1/3: Resources column -->
         <aside class="side-panel" aria-label="Report resources">
           <section class="section-card" id="resources">
             <h3>Resources</h3>
