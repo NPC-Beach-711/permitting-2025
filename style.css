@@ -11,17 +11,17 @@ body {
   padding: 0;
 }
 
-body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  line-height: 1.5;
-  color: #222;
-  background-color: #ffffff;
-}
-
-/* Simple color tokens for NPC */
+/* ---- BASE TYPE & COLORS ---- */
 :root {
   --npc-navy: #003a61;
   --npc-navy-dark: #00263f;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.6;
+  color: #1f2933;
+  background-color: #ffffff;
 }
 
 /* ---- LAYOUT WRAPPERS ---- */
@@ -36,7 +36,7 @@ main {
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1120px;
   margin: 0 auto;
   padding: 0 1.5rem;
 }
@@ -44,7 +44,7 @@ main {
 /* ---- HEADER ---- */
 .site-header {
   background: #ffffff;
-  border-bottom: 1px solid #d9e2ec;
+  border-bottom: 1px solid #e5e7eb;
 }
 
 .header-inner {
@@ -55,10 +55,16 @@ main {
   gap: 1.5rem;
 }
 
+/* Make the logo area clickable without changing layout */
 .logo-wrap {
   display: flex;
   align-items: center;
   gap: 0.75rem;
+  text-decoration: none;
+}
+
+.logo-wrap.home-link {
+  cursor: pointer;
 }
 
 .logo-img {
@@ -69,6 +75,11 @@ main {
 .site-title {
   font-weight: 700;
   font-size: 1.1rem;
+  color: #111827;
+}
+
+.logo-wrap:hover .site-title {
+  text-decoration: underline;
 }
 
 /* Nav */
@@ -81,7 +92,7 @@ main {
 .main-nav a {
   text-decoration: none;
   color: var(--npc-navy);
-  padding: 0.25rem 0.5rem;
+  padding: 0.25rem 0.6rem;
   border-radius: 999px;
 }
 
@@ -121,7 +132,7 @@ main {
 .content-grid {
   display: grid;
   grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
-  gap: 2rem;
+  gap: 2.25rem;
   align-items: flex-start;
   margin: 2rem auto 3rem;
 }
@@ -154,20 +165,20 @@ main {
 .side-panel {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1.25rem;
 }
 
-/* ---- SECTIONS (no "card" look) ---- */
+/* ---- SECTIONS (simple, with rules) ---- */
 .section-card {
   background: transparent;
   border-radius: 0;
   box-shadow: none;
-  padding: 1.5rem 0;
-  border-bottom: 1px solid #e0e0e0;
+  padding: 1.75rem 0;
+  border-top: 1px solid #e5e7eb;
 }
 
-.section-card:last-child {
-  border-bottom: none;
+.section-card:first-of-type {
+  border-top: none;
 }
 
 .section-card h3 {
@@ -179,8 +190,8 @@ main {
 
 /* ---- HERO ---- */
 .hero {
-  padding: 1.5rem 0 1.75rem;
-  border-bottom: 1px solid #e0e0e0;
+  padding: 1.75rem 0 1.75rem;
+  border-bottom: 1px solid #e5e7eb;
   background: transparent;
 }
 
@@ -194,7 +205,7 @@ main {
 /* Cover on the left */
 .hero-cover img {
   display: block;
-  width: 160px;
+  width: 170px;
   height: auto;
   border-radius: 4px;
   box-shadow: 0 3px 6px rgba(15, 23, 42, 0.25);
@@ -216,20 +227,21 @@ main {
 
 /* Text block */
 .hero-text h1 {
-  font-size: 2.1rem;
+  font-size: 2.25rem;
   margin: 0 0 0.25rem;
   color: #101523;
 }
 
 .hero-text h2 {
-  font-size: 1.35rem;
+  font-size: 1.25rem;
   margin: 0 0 0.5rem;
   color: #273444;
 }
 
 .hero-year {
-  margin: 0 0 0.75rem;
-  color: #555;
+  margin: 0 0 1rem;
+  color: #6b7280;
+  font-size: 0.9rem;
 }
 
 /* Buttons */
@@ -237,7 +249,7 @@ main {
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
-  margin: 0.25rem 0 0.25rem;
+  margin: 0 0 0.35rem;
 }
 
 .btn {
@@ -278,7 +290,7 @@ main {
   }
 
   .hero-cover img {
-    width: 140px;
+    width: 150px;
   }
 }
 
@@ -286,16 +298,16 @@ main {
 .share-row {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  margin-top: 1rem;
+  gap: 0.7rem;
+  margin-top: 0.5rem;
 }
 
 .share-label {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: #444;
-  margin-right: 0.25rem;
+  letter-spacing: 0.12em;
+  color: #4b5563;
+  font-weight: 600;
 }
 
 .share-icon {
@@ -305,8 +317,8 @@ main {
 }
 
 .share-icon svg {
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
   fill: var(--npc-navy);
   opacity: 0.9;
 }
@@ -319,7 +331,12 @@ main {
 .side-panel .section-card {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
-  border-bottom: none;
+  border-top: none;
+}
+
+.side-panel h3 {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 .link-list {
@@ -335,6 +352,7 @@ main {
 .link-list a {
   color: var(--npc-navy);
   text-decoration: none;
+  font-size: 0.9rem;
 }
 
 .link-list a:hover {
@@ -385,23 +403,4 @@ a {
 
 a:hover {
   color: var(--npc-navy-dark);
-}
-/* Make the logo area clickable without changing the layout */
-.logo-wrap {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  text-decoration: none;
-}
-
-.logo-wrap.home-link {
-  cursor: pointer;
-}
-
-.logo-wrap.home-link .site-title {
-  color: inherit;
-}
-
-.logo-wrap:hover .site-title {
-  text-decoration: underline;
 }
