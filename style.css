@@ -15,15 +15,13 @@ body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   line-height: 1.5;
   color: #222;
-  background-color: #f3f5f8;
+  background-color: #ffffff; /* NO tan background */
 }
 
-/* Simple color tokens – tweak these to match exact NPC brand */
+/* Simple color tokens for NPC */
 :root {
   --npc-navy: #003a61;
   --npc-navy-dark: #00263f;
-  --npc-accent: #f4b000;  /* if you want a gold accent somewhere later */
-  --panel-bg: #f7f3ec;    /* light neutral hero background */
 }
 
 /* ---- LAYOUT WRAPPERS ---- */
@@ -125,7 +123,7 @@ main {
   grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
   gap: 2rem;
   align-items: flex-start;
-  margin: 2.5rem auto;
+  margin: 2rem auto 3rem;
 }
 
 /* Stack on small screens */
@@ -150,7 +148,7 @@ main {
 .main-column {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 2rem;
 }
 
 .side-panel {
@@ -159,26 +157,31 @@ main {
   gap: 1.5rem;
 }
 
-/* ---- CARDS ---- */
+/* ---- SECTIONS (NO "CARD" LOOK) ---- */
 .section-card {
-  background: #ffffff;
-  border-radius: 8px;
-  padding: 1.5rem;
-  box-shadow: 0 1px 4px rgba(15, 23, 42, 0.08);
+  background: transparent;   /* no block */
+  border-radius: 0;
+  box-shadow: none;
+  padding: 1.5rem 0;         /* vertical spacing only */
+  border-bottom: 1px solid #e0e0e0; /* subtle divider, like text sections */
+}
+
+.section-card:last-child {
+  border-bottom: none;
 }
 
 .section-card h3 {
   margin-top: 0;
   margin-bottom: 0.75rem;
-  font-size: 1.1rem;
+  font-size: 1.15rem;
+  color: #101523;
 }
 
-/* ---- HERO BAND (NAP-style) ---- */
+/* ---- HERO BAND (now just plain content, no tan block) ---- */
 .hero {
-  background: var(--panel-bg);
-  border-radius: 8px;
-  padding: 1.75rem;
-  box-shadow: 0 1px 4px rgba(15, 23, 42, 0.06);
+  padding: 1.5rem 0 1.75rem;
+  border-bottom: 1px solid #e0e0e0;
+  background: transparent;   /* remove tan */
 }
 
 .hero-label {
@@ -191,7 +194,7 @@ main {
 
 .hero-inner {
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: auto minmax(0, 1fr);
   gap: 1.75rem;
   align-items: flex-start;
 }
@@ -199,8 +202,7 @@ main {
 /* Cover on the left */
 .hero-cover img {
   display: block;
-  width: 100%;
-  max-width: 200px;
+  width: 160px;
   height: auto;
   border-radius: 4px;
   box-shadow: 0 3px 6px rgba(15, 23, 42, 0.25);
@@ -222,7 +224,7 @@ main {
 
 /* Text block */
 .hero-text h1 {
-  font-size: 2rem;
+  font-size: 2.1rem;
   margin: 0 0 0.25rem;
   color: #101523;
 }
@@ -236,4 +238,147 @@ main {
 .hero-year {
   margin: 0 0 0.75rem;
   color: #555;
+}
+
+.hero-summary {
+  margin-top: 1rem;
+  color: #333;
+}
+
+.hero-ebook-note {
+  font-size: 0.8rem;
+  color: #555;
+  margin-top: 0.5rem;
+}
+
+/* Buttons row */
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 0.25rem 0 0.5rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.6rem 1.3rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: 1px solid transparent;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background: var(--npc-navy);
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background: var(--npc-navy-dark);
+}
+
+.btn-secondary {
+  background: #ffffff;
+  color: var(--npc-navy);
+  border-color: var(--npc-navy);
+}
+
+.btn-secondary:hover {
+  background: #e1ecf7;
+}
+
+.btn-outline {
+  background: #ffffff;
+  color: var(--npc-navy);
+  border-color: #b0c4de;
+}
+
+.btn-outline:hover {
+  border-color: var(--npc-navy);
+}
+
+/* Hero responsive */
+@media (max-width: 700px) {
+  .hero-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-cover img {
+    width: 140px;
+  }
+}
+
+/* ---- SIDE PANEL (simple, no boxes) ---- */
+.side-panel .section-card {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  border-bottom: none;
+}
+
+.link-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.link-list li + li {
+  margin-top: 0.5rem;
+}
+
+.link-list a {
+  color: var(--npc-navy);
+  text-decoration: none;
+}
+
+.link-list a:hover {
+  text-decoration: underline;
+}
+
+/* ---- FOOTER ---- */
+.site-footer {
+  background: #ffffff;
+  border-top: 1px solid #d9e2ec;
+  margin-top: 2rem;
+}
+
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 0;
+  font-size: 0.9rem;
+}
+
+.footer-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #52606d;
+}
+
+.footer-links a:hover {
+  color: var(--npc-navy);
+}
+
+@media (max-width: 600px) {
+  .footer-inner {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-start;
+  }
+}
+
+/* Generic link color */
+a {
+  color: var(--npc-navy);
+}
+
+a:hover {
+  color: var(--npc-navy-dark);
 }
