@@ -15,7 +15,7 @@ body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   line-height: 1.5;
   color: #222;
-  background-color: #ffffff; /* NO tan background */
+  background-color: #ffffff;
 }
 
 /* Simple color tokens for NPC */
@@ -157,13 +157,13 @@ main {
   gap: 1.5rem;
 }
 
-/* ---- SECTIONS (NO "CARD" LOOK) ---- */
+/* ---- SECTIONS (no "card" look) ---- */
 .section-card {
-  background: transparent;   /* no block */
+  background: transparent;
   border-radius: 0;
   box-shadow: none;
-  padding: 1.5rem 0;         /* vertical spacing only */
-  border-bottom: 1px solid #e0e0e0; /* subtle divider, like text sections */
+  padding: 1.5rem 0;
+  border-bottom: 1px solid #e0e0e0;
 }
 
 .section-card:last-child {
@@ -177,11 +177,11 @@ main {
   color: #101523;
 }
 
-/* ---- HERO BAND (now just plain content, no tan block) ---- */
+/* ---- HERO ---- */
 .hero {
   padding: 1.5rem 0 1.75rem;
   border-bottom: 1px solid #e0e0e0;
-  background: transparent;   /* remove tan */
+  background: transparent;
 }
 
 .hero-label {
@@ -311,7 +311,42 @@ main {
   }
 }
 
-/* ---- SIDE PANEL (simple, no boxes) ---- */
+/* ---- SHARE ROW ---- */
+.share-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 1.5rem 0 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.share-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #444;
+  margin-right: 0.25rem;
+}
+
+.share-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.share-icon svg {
+  width: 20px;
+  height: 20px;
+  fill: var(--npc-navy);
+  opacity: 0.9;
+}
+
+.share-icon svg:hover {
+  opacity: 1;
+}
+
+/* ---- SIDE PANEL ---- */
 .side-panel .section-card {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
