@@ -30,10 +30,10 @@
 <body>
   <div class="page-wrap">
     <!-- HEADER -->
-    <header id="home">
+    <header id="home" class="site-header">
       <div class="container header-inner">
         <div class="logo-wrap">
-          <img src="NPC_Logo.png" alt="National Petroleum Council (NPC) logo" />
+          <img src="NPC_Logo.png" alt="National Petroleum Council (NPC) logo" class="logo-img" />
           <div class="site-title">National Petroleum Council</div>
         </div>
 
@@ -42,6 +42,7 @@
           <a
             href="NPC_Gas-Electric_Coordination_Draft_Report.pdf"
             target="_blank"
+            rel="noopener"
             onclick="trackEvent('view_pdf', 'Nav', 'Full Report')"
           >
             Full Report
@@ -79,38 +80,53 @@
       </div>
     </header>
 
-    <!-- HERO -->
-    <section class="hero">
-      <div class="container hero-inner">
-        <div class="hero-text">
-          <h1>Reliable Energy</h1>
-          <h2>Delivering on the Promise of Gas–Electric Coordination</h2>
-          <p class="hero-subtitle">
-            A report of the National Petroleum Council Committee on Gas–Electric Coordination.
-          </p>
-        </div>
-
-        <div class="hero-actions">
-          <a
-            href="GE_Perm_Req_Ltr.pdf"
-            target="_blank"
-            rel="noopener"
-            class="btn btn-primary"
-            onclick="trackEvent('view_pdf', 'Hero', 'Study Request Letter')"
-          >
-            View Study Request Letter
-          </a>
-        </div>
-      </div>
-    </section>
-
     <!-- MAIN CONTENT -->
     <main>
       <div class="container content-grid">
+        <!-- LEFT 2/3 -->
+        <div class="main-column">
+          <!-- HERO -->
+          <section class="hero">
+            <div class="hero-inner">
+              <div class="hero-text">
+                <p class="hero-label">Consensus Study Report</p>
 
-        <!-- LEFT COLUMN -->
-        <div>
-          <article class="section-card">
+                <h1>Reliable Energy</h1>
+                <h2>Delivering on the Promise of Gas–Electric Coordination</h2>
+                <p class="hero-subtitle">
+                  A report of the National Petroleum Council Committee on Gas–Electric Coordination.
+                </p>
+
+                <div class="hero-actions">
+                  <a
+                    href="NPC_Gas-Electric_Coordination_Draft_Report.pdf"
+                    target="_blank"
+                    rel="noopener"
+                    class="btn btn-primary"
+                    onclick="trackEvent('download_pdf', 'Hero', 'Full Report (PDF)')"
+                  >
+                    Download Full Report (PDF)
+                  </a>
+
+                  <a
+                    href="#"
+                    class="btn btn-secondary"
+                    onclick="trackEvent('click_link', 'Hero', 'Buy Print Copy')"
+                  >
+                    Buy Print Copy
+                  </a>
+                </div>
+              </div>
+
+              <div class="hero-image">
+                <!-- Swap to actual cover when you have it -->
+                <img src="NPC_Logo.png" alt="Gas–Electric Coordination study cover" />
+              </div>
+            </div>
+          </section>
+
+          <!-- ABOUT THIS REPORT -->
+          <article class="section-card" id="about-report">
             <h3>About this Report</h3>
             <p>
               The Gas–Electric Coordination Study by the National Petroleum Council examines how growing
@@ -128,8 +144,9 @@
             </p>
           </article>
 
+          <!-- STUDY PARTICIPANTS -->
           <article class="section-card" id="participants">
-            <h3>About the Study Participants</h3>
+            <h3>Study Participants</h3>
             <p>
               The study was directed by a committee composed of senior leaders from the natural gas and
               electric power industries, along with representatives from government, academia, and public
@@ -142,108 +159,49 @@
               inform the conclusions and recommendations presented in the report.
             </p>
           </article>
-
-          <!-- ABOUT NPC -->
-          <article class="section-card" id="about-npc">
-            <h3>About the National Petroleum Council</h3>
-            <p>
-              The National Petroleum Council (NPC) is an organization whose sole purpose is to provide
-              advice to the federal government. Following successful cooperation during World War&nbsp;II,
-              President Harry Truman requested this federally chartered and privately funded advisory
-              group be established by the Secretary of the Interior to represent the oil and natural gas
-              industry’s views.
-            </p>
-            <p>
-              Today, the NPC is chartered by the Secretary of Energy under the Federal Advisory Committee
-              Act of 1972, and the views represented are broader than those of the oil and natural gas
-              industry. The Council provides advice, information, and policy options on energy-related
-              issues.
-            </p>
-          </article>
         </div>
 
-        <!-- RIGHT COLUMN -->
-        <aside class="side-panel" aria-label="Report information">
-          <section class="section-card" id="downloads">
-            <h3>Report Downloads</h3>
-            <p>Access the full report and supporting materials:</p>
-            <ul>
+        <!-- RIGHT 1/3 -->
+        <aside class="side-panel" aria-label="Report resources">
+          <section class="section-card" id="resources">
+            <h3>Resources</h3>
+            <ul class="link-list">
+              <li>
+                <a
+                  href="GE_Perm_Req_Ltr.pdf"
+                  target="_blank"
+                  rel="noopener"
+                  onclick="trackEvent('view_pdf', 'Resources', 'Study Request Letter')"
+                >
+                  Study Request Letter (PDF)
+                </a>
+              </li>
+              <li>
+                <a
+                  href="presentations.html"
+                  onclick="trackEvent('click_link', 'Resources', 'Presentations Page')"
+                >
+                  Presentations Page
+                </a>
+              </li>
               <li>
                 <a
                   href="NPC_Gas-Electric_Coordination_Draft_Report.pdf"
                   target="_blank"
                   rel="noopener"
-                  onclick="trackEvent('download_pdf', 'Downloads', 'Full Report (PDF)')"
+                  onclick="trackEvent('download_pdf', 'Resources', 'Full Report (PDF)')"
                 >
                   Full Report (PDF)
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  target="_blank"
-                  onclick="trackEvent('click_link', 'Downloads', 'Executive Summary')"
-                >
-                  Executive Summary
-                </a>
-              </li>
-              <li>
-                <a
-                  href="NPC_Gas-Electric_Coordination_Draft_Report.pdf#page=19"
-                  target="_blank"
-                  rel="noopener"
-                  onclick="trackEvent('view_pdf', 'Downloads', 'Chapter 1')"
-                >
-                  Chapter 1: Misalignment Between Electric &amp; Gas Markets
-                </a>
-              </li>
-              <li>
-                <a
-                  href="NPC_Gas-Electric_Coordination_Draft_Report.pdf#page=46"
-                  target="_blank"
-                  rel="noopener"
-                  onclick="trackEvent('view_pdf', 'Downloads', 'Chapter 2')"
-                >
-                  Chapter 2: Variable Demand &amp; Reliability
-                </a>
-              </li>
-              <li>
-                <a
-                  href="NPC_Gas-Electric_Coordination_Draft_Report.pdf#page=85"
-                  target="_blank"
-                  rel="noopener"
-                  onclick="trackEvent('view_pdf', 'Downloads', 'Chapter 3')"
-                >
-                  Chapter 3: Current Coordination State
-                </a>
-              </li>
-              <li>
-                <a
-                  href="NPC_Gas-Electric_Coordination_Draft_Report.pdf#page=119"
-                  target="_blank"
-                  rel="noopener"
-                  onclick="trackEvent('view_pdf', 'Downloads', 'Chapter 4')"
-                >
-                  Chapter 4: Recommendations
                 </a>
               </li>
             </ul>
           </section>
 
-          <!-- PRESENTATIONS -->
           <section class="section-card" id="presentations">
-            <h3>Presentations</h3>
-
-            <p>
-              The materials below were prepared to communicate the study’s key findings to policymakers,
-              regulators, system operators, industry leaders, and other stakeholders.
-            </p>
-
-            <h4>NPC Annual Meeting Live Stream</h4>
+            <h3>Featured Presentation</h3>
             <p>
               A high-level briefing of the study’s scope, major findings, and recommendations on
-              gas–electric interdependence and reliability. Presented during the NPC’s 135th Annual
-              Meeting on <strong>December 3, 2025</strong>.
+              gas–electric interdependence and reliability.
             </p>
             <p>
               <a
@@ -255,30 +213,33 @@
                 Watch NPC Annual Meeting live stream
               </a>
             </p>
-
-            <h4>NPC Annual Meeting Presentation</h4>
-            <p>
-              The slide presentation delivered at the NPC’s 135th Annual Meeting on
-              <strong>December 3, 2025</strong>, summarizing regional reliability challenges,
-              sector interdependencies, and key recommendations.
-            </p>
-            <p>
-              <a
-                href="Gas_Electric_NPC_MTG.pdf"
-                target="_blank"
-                rel="noopener"
-                onclick="trackEvent('view_pdf', 'Presentations', 'Meeting Presentation PDF')"
-              >
-                View NPC Annual Meeting presentation (PDF)
-              </a>
-            </p>
           </section>
         </aside>
+      </div>
+
+      <!-- ABOUT NPC (full-width below main grid) -->
+      <div class="container">
+        <article class="section-card" id="about-npc">
+          <h3>About the National Petroleum Council</h3>
+          <p>
+            The National Petroleum Council (NPC) is an organization whose sole purpose is to provide
+            advice to the federal government. Following successful cooperation during World War&nbsp;II,
+            President Harry Truman requested this federally chartered and privately funded advisory
+            group be established by the Secretary of the Interior to represent the oil and natural gas
+            industry’s views.
+          </p>
+          <p>
+            Today, the NPC is chartered by the Secretary of Energy under the Federal Advisory Committee
+            Act of 1972, and the views represented are broader than those of the oil and natural gas
+            industry. The Council provides advice, information, and policy options on energy-related
+            issues.
+          </p>
+        </article>
       </div>
     </main>
 
     <!-- FOOTER -->
-    <footer>
+    <footer class="site-footer">
       <div class="container footer-inner">
         <div>
           &copy; 2025 ·
